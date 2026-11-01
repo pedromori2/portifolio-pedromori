@@ -53,22 +53,44 @@ export const projects: ProjectEntry[] = [
     hasArchitectureDiagram: true,
   },
   {
-    slug: "hosthabbo",
-    name: "HostHabbo",
-    status: "in-development",
-    period: { pt: "em andamento", en: "in progress" },
+    slug: "br-instalacoes",
+    name: "BR Instalações",
+    status: "live",
     tagline: {
-      pt: "Plataforma de reservas de hotel, criada como projeto estruturado de estudo.",
-      en: "Hotel booking platform, built as a structured study project.",
+      pt: "Sistema de gestão financeira para a BR Instalações.",
+      en: "Financial management system for BR Instalações.",
     },
     description: [
       {
-        pt: "Projeto em desenvolvimento, organizado em 8 épicos temáticos, com Definition of Done formal e revisão de PRs no estilo tech lead.",
-        en: "Project in progress, organized into 8 themed epics, with a formal Definition of Done and tech-lead-style PR reviews.",
+        pt: "O BR Instalações é um sistema de gestão financeira em produção. Atuei no desenvolvimento completo do projeto, do back end ao front end.",
+        en: "BR Instalações is a financial management system, live in production. I worked on the full stack, from back end to front end.",
       },
     ],
-    stack: ["Java 21", "Spring Boot", "PostgreSQL", "Flyway", "Maven"],
-    links: [],
+    stack: [
+      "Java 25",
+      "Spring Boot 4.1",
+      "Spring Security",
+      "Maven",
+      "Flyway",
+      "OAuth2 Resource Server",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "React Hook Form",
+      "Zod",
+      "SheetJS (xlsx)",
+      "Supabase",
+      "Docker",
+      "Google Cloud Run",
+      "Google Cloud Secret Manager",
+    ],
+    links: [
+      {
+        label: { pt: "Acessar site", en: "Visit site" },
+        href: "https://br-instalacoes-frontend.vercel.app/login",
+      },
+    ],
   },
   {
     slug: "ricardo-team",
@@ -96,42 +118,6 @@ export const projects: ProjectEntry[] = [
         href: "https://github.com/pedromori2/ric-team-back",
       },
     ],
-  },
-  {
-    slug: "queue-quest-bushido",
-    name: "Queue Quest Bushido",
-    status: "concept",
-    playful: true,
-    tagline: {
-      pt: "Idle RPG em HTML/Canvas com estética do Japão feudal.",
-      en: "Idle RPG in HTML/Canvas with a feudal-Japan aesthetic.",
-    },
-    description: [
-      {
-        pt: "Combate por ondas, 6 slots de equipamento, sistema de forja/aprimoramento, loja e painel de heróis. Publicação na Steam planejada via Electron ou Tauri.",
-        en: "Wave-based combat, 6 equipment slots, a forge/upgrade system, a shop and a hero panel. Steam release planned via Electron or Tauri.",
-      },
-    ],
-    stack: ["HTML", "Canvas", "JavaScript"],
-    links: [],
-  },
-  {
-    slug: "arena-dos-fragmentos",
-    name: "Arena dos Fragmentos",
-    status: "concept",
-    playful: true,
-    tagline: {
-      pt: "Conceito de Tower Defense/Roguelike em Godot 4.",
-      en: "Tower Defense/Roguelike concept built in Godot 4.",
-    },
-    description: [
-      {
-        pt: "Inspirado em Brotato e Balatro.",
-        en: "Inspired by Brotato and Balatro.",
-      },
-    ],
-    stack: ["Godot 4", "GDScript"],
-    links: [],
   },
 ];
 

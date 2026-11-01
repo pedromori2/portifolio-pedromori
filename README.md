@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Pedro Hiroshigue Mori
 
-## Getting Started
+Portfólio pessoal, somente frontend, construído com Next.js (App Router) + TypeScript + Tailwind CSS, exportado como site 100% estático (`output: "export"`). Bilíngue (PT/EN), com tema claro/escuro e navegação por âncoras.
 
-First, run the development server:
+## Como rodar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Outros comandos:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # gera o site estático em out/
+npm run lint    # ESLint
+npm run format  # Prettier (escreve as correções)
+```
 
-## Learn More
+## Como editar o conteúdo
 
-To learn more about Next.js, take a look at the following resources:
+Todo o texto do site fica separado dos componentes, em `src/content/`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `profile.ts` — nome, cargo, contatos, texto de posicionamento, "sobre" e os números de destaque.
+- `experience.ts` — experiência profissional (timeline).
+- `projects.ts` — projetos (Celebra, HostHabbo, Ricardo Team, jogos). Cada item tem `tagline`, `description`, `stack`, `links`, etc., sempre em `{ pt, en }`.
+- `skills.ts` — grupos de habilidades.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todo texto visível ao usuário é bilíngue: `{ pt: "...", en: "..." }`. Para editar, basta mudar os valores desses arquivos — não é necessário tocar nos componentes em `src/components/`.
 
-## Deploy on Vercel
+As strings da interface (botões, rótulos de navegação etc.) ficam em `src/lib/i18n.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel
+Importe o repositório no [Vercel](https://vercel.com/new) — a detecção de projeto Next.js é automática. Não é necessária nenhuma variável de ambiente (projeto sem backend).
+
+### GitHub Pages
+```bash
+npm run build
+```
+Isso gera o site estático em `out/`. Publique essa pasta com qualquer action de deploy do GitHub Pages (ex.: `actions/upload-pages-artifact` apontando para `out`).
+
+## Pendências / itens a confirmar
+
+- **Ricardo Team (back-end):** o link do repositório (`github.com/pedromori2/ric-team-back`) foi inferido a partir do `artifactId` do `pom.xml` enviado — confirme se o nome e a visibilidade (público) estão corretos.
+- **URL final do site:** `metadataBase` em `src/app/layout.tsx` e as URLs em `src/app/sitemap.ts` / `public/robots.txt` estão com um domínio placeholder (`https://portfolio-pedromori.vercel.app`). Atualize para o domínio real assim que o deploy for feito.
+- **Favicon:** está usando o ícone padrão do Next.js. Pode ser substituído por um ícone próprio (ex. monograma "PM") em `src/app/favicon.ico`.
+- **GitHub do HostHabbo:** não incluído a pedido — o projeto aparece apenas com o selo "Em desenvolvimento", sem link de código.

@@ -1,0 +1,254 @@
+export function ArchitectureDiagram() {
+  return (
+    <svg
+      viewBox="0 0 800 260"
+      className="h-auto w-full"
+      role="img"
+      aria-label="Diagrama: Front-end Next.js envia requisições para a API Spring Boot, que persiste dados no PostgreSQL e integra com Asaas, Resend e a stack de observabilidade."
+    >
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--foreground-muted)" />
+        </marker>
+      </defs>
+
+      {/* Front-end */}
+      <g>
+        <rect
+          x="20"
+          y="100"
+          width="150"
+          height="60"
+          rx="4"
+          fill="none"
+          stroke="var(--accent)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="95"
+          y="126"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="13"
+          fill="var(--foreground)"
+        >
+          Next.js
+        </text>
+        <text
+          x="95"
+          y="144"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="11"
+          fill="var(--foreground-muted)"
+        >
+          front-end
+        </text>
+      </g>
+
+      <line
+        x1="170"
+        y1="130"
+        x2="228"
+        y2="130"
+        stroke="var(--foreground-muted)"
+        strokeWidth="1.5"
+        markerEnd="url(#arrow)"
+      />
+
+      {/* API */}
+      <g>
+        <rect
+          x="230"
+          y="100"
+          width="170"
+          height="60"
+          rx="4"
+          fill="none"
+          stroke="var(--border)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="315"
+          y="126"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="13"
+          fill="var(--foreground)"
+        >
+          Spring Boot
+        </text>
+        <text
+          x="315"
+          y="144"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="11"
+          fill="var(--foreground-muted)"
+        >
+          API + JWT
+        </text>
+      </g>
+
+      <line
+        x1="400"
+        y1="130"
+        x2="458"
+        y2="130"
+        stroke="var(--foreground-muted)"
+        strokeWidth="1.5"
+        markerEnd="url(#arrow)"
+      />
+
+      {/* DB */}
+      <g>
+        <rect
+          x="460"
+          y="100"
+          width="150"
+          height="60"
+          rx="4"
+          fill="none"
+          stroke="var(--border)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="535"
+          y="126"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="13"
+          fill="var(--foreground)"
+        >
+          PostgreSQL
+        </text>
+        <text
+          x="535"
+          y="144"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="11"
+          fill="var(--foreground-muted)"
+        >
+          Flyway
+        </text>
+      </g>
+
+      {/* Integrations */}
+      <line
+        x1="315"
+        y1="100"
+        x2="315"
+        y2="60"
+        stroke="var(--foreground-muted)"
+        strokeWidth="1.5"
+        markerEnd="url(#arrow)"
+      />
+      <g>
+        <rect
+          x="235"
+          y="10"
+          width="80"
+          height="40"
+          rx="4"
+          fill="none"
+          stroke="var(--border)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="275"
+          y="34"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="11"
+          fill="var(--foreground)"
+        >
+          Asaas
+        </text>
+      </g>
+      <line
+        x1="355"
+        y1="100"
+        x2="395"
+        y2="60"
+        stroke="var(--foreground-muted)"
+        strokeWidth="1.5"
+        markerEnd="url(#arrow)"
+      />
+      <g>
+        <rect
+          x="355"
+          y="10"
+          width="80"
+          height="40"
+          rx="4"
+          fill="none"
+          stroke="var(--border)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="395"
+          y="34"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="11"
+          fill="var(--foreground)"
+        >
+          Resend
+        </text>
+      </g>
+
+      {/* Observability */}
+      <line
+        x1="620"
+        y1="130"
+        x2="678"
+        y2="130"
+        stroke="var(--foreground-muted)"
+        strokeWidth="1.5"
+        markerEnd="url(#arrow)"
+      />
+      <g>
+        <rect
+          x="620"
+          y="190"
+          width="160"
+          height="60"
+          rx="4"
+          fill="none"
+          stroke="var(--border)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="700"
+          y="216"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="12"
+          fill="var(--foreground)"
+        >
+          Grafana · Sentry
+        </text>
+        <text
+          x="700"
+          y="234"
+          textAnchor="middle"
+          fontFamily="var(--font-mono-tech)"
+          fontSize="11"
+          fill="var(--foreground-muted)"
+        >
+          Logtail
+        </text>
+      </g>
+      <line
+        x1="315"
+        y1="160"
+        x2="700"
+        y2="190"
+        stroke="var(--foreground-muted)"
+        strokeWidth="1"
+        strokeDasharray="3 3"
+      />
+    </svg>
+  );
+}
